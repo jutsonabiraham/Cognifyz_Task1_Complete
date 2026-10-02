@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognifyz Task 1</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Registration</h1>
+        <p>Cognifyz Full Stack Development - Task 1</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>User Information</h2>
+
+            <form action="/submit" method="POST">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Enter your message"
+                    required
+                ></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <% if (submitted) { %>
+            <section class="card success">
+                <h2>Submitted Data</h2>
+                <p><strong>Name:</strong> <%= data.name %></p>
+                <p><strong>Email:</strong> <%= data.email %></p>
+                <p><strong>Message:</strong> <%= data.message %></p>
+                <p class="success-text">Form submitted successfully.</p>
+            </section>
+        <% } %>
+    </main>
+
+</body>
+</html>
